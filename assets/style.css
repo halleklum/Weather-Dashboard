@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+  }
+  nav {
+    color: rgb(107, 255, 28);
+    font-size: 10px;
+    padding: 10px;
+  }
+  .title{
+    text-align: center;
+  }
+  
+  .lowuv {
+    background-color: lightgreen;
+  }
+  
+  .moderateuv {
+    background-color: yellow;
+  }
+  
+  .highuv {
+    background-color: orange;
+  }
+  
+  .veryhighuv{
+    background-color: red;
+  }
+  
+  /* * {
+    font-family: 'Open Sans', sans-serif;
+  } */
+  
