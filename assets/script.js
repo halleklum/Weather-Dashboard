@@ -32,6 +32,7 @@ $(document).ready(function() {
             var longitude = data.coord.lon; 
             var iconId= data.weather[0].icon; 
 
+            // date (M/DD/YYYY)
             currentCity.text(data.name+"("+currentMonth+"/"+currentDay+"/"+currentYear+")"); 
             temperatureEl.text("temperature: "+temperatureF+"°F"); 
             humidityEl.text("humidity: "+data.main.humidity+"%"); 
@@ -82,16 +83,20 @@ $(document).ready(function() {
                     var forecastDiv = $("<div>"); 
                     forecastDiv.addClass("col bg-primary text-white ml-3 ml-b rounded");
                     forecast.append(forecastDiv); 
+
                     var forecastP = $("<p>");  
                     forecastP.text(futureMonth+"/"+futureDay+"/"+futureYear); 
                     forecastP.addClass("dayforecast"); 
+
                     var forecastImg = $("<img>"); 
                     forecastImg.attr("src", "https://openweathermap.org/img/wn/"+data.list[forecastIndex].weather[0].icon+".png") 
                     forecastImg.attr("alt", data.list[forecastIndex].weather[0].description); 
+
                     var forecastTemp = $("<p>"); 
                     var tempToF = Math.round((((data.list[forecastIndex].main.temp-273.15)*1.8)+32)*10)/10; 
                     forecastTemp.text("Temperature: " +tempToF+ "°F"); 
                     forecastTemp.addClass("forecasttemp"); 
+                    
                     var forecastHum = $("<p>"); 
                     forecastHum.text("Humidity: "+data.list[forecastIndex].main.humidity + "%"); 
                     forecastHum.addClass("forecasthumidity"); 
